@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  hello_world:
+    image: ${DOCKER_REGISTRY-}helloworld
+    build:
+      context: .
+      dockerfile: Dockerfile

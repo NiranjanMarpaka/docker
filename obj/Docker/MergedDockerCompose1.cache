@@ -1,0 +1,47 @@
+name: dockercompose5522688068329108635
+services:
+  hello_world:
+    build:
+      context: C:\Users\NiranjanMarpaka\source\repos\hello_world
+      dockerfile: Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: hello_world
+      target: base
+    container_name: hello_world
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      NUGET_FALLBACK_PACKAGES: ""
+    image: helloworld:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/hello_world.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    tty: true
+    volumes:
+    - type: bind
+      source: C:\Users\NiranjanMarpaka\source\repos\hello_world
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\NiranjanMarpaka\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\NiranjanMarpaka\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+networks:
+  default:
+    name: dockercompose5522688068329108635_default

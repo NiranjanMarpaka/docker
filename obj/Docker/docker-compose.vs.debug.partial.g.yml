@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  hello_world:
+    image: helloworld:dev
+    container_name: hello_world
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "hello_world"
+    #environment:
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_hello_world$
+    volumes:
+      - C:\Users\NiranjanMarpaka\source\repos\hello_world:/app
+      - C:\Users\NiranjanMarpaka\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_hello_world$
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_hello_world$ \"/app/bin/Debug/net6.0/hello_world.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true

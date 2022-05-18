@@ -1,0 +1,12 @@
+name: dockercompose5522688068329108635
+services:
+  hello_world:
+    build:
+      context: C:\Users\NiranjanMarpaka\source\repos\hello_world
+      dockerfile: Dockerfile
+    image: helloworld
+    networks:
+      default: null
+networks:
+  default:
+    name: dockercompose5522688068329108635_default

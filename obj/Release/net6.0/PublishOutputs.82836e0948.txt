@@ -1,0 +1,5 @@
+C:\Users\NiranjanMarpaka\source\repos\hello_world\bin\Release\net6.0\publish\hello_world.exe
+C:\Users\NiranjanMarpaka\source\repos\hello_world\bin\Release\net6.0\publish\hello_world.dll
+C:\Users\NiranjanMarpaka\source\repos\hello_world\bin\Release\net6.0\publish\hello_world.deps.json
+C:\Users\NiranjanMarpaka\source\repos\hello_world\bin\Release\net6.0\publish\hello_world.runtimeconfig.json
+C:\Users\NiranjanMarpaka\source\repos\hello_world\bin\Release\net6.0\publish\hello_world.pdb
